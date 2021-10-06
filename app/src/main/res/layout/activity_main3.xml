@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="207dp"
+        android:layout_height="88dp"
+        android:text="Torch Off"
+        android:textOn="Torch ON"
+        android:textOff="Torch Off"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
