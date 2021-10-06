@@ -2,6 +2,7 @@ package com.example.torchonoffapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                flsahOff();
+                flashOff();
             }
         });
     }
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             String id  = cm.getCameraIdList()[0];
             cm.setTorchMode(id,true);
             flash=true;
-        }catch (ClassCastException e){
+        }catch (CameraAccessException e){
 
         }
     }
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             String id  = cm.getCameraIdList()[0];
             cm.setTorchMode(id,false);
             flash=false;
-        }catch (ClassCastException e){
+        }catch (CameraAccessException e){
 
         }
     }
