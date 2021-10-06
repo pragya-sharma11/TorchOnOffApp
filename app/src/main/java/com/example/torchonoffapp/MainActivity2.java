@@ -35,6 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
             String id  = cm.getCameraIdList()[0];
             cm.setTorchMode(id,true);
             flash=true;
+            i.setImageResource(R.drawable.on);
         }catch (CameraAccessException e){
 
         }
@@ -44,6 +45,7 @@ public class MainActivity2 extends AppCompatActivity {
             String id  = cm.getCameraIdList()[0];
             cm.setTorchMode(id,false);
             flash=false;
+            i.setImageResource(R.drawable.off);
         }catch (CameraAccessException e){
 
         }
