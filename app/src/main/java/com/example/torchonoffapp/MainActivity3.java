@@ -2,15 +2,19 @@ package com.example.torchonoffapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
 public class MainActivity3 extends AppCompatActivity {
     ToggleButton tb;
     CameraManager cm;
+    Button b;
     private  boolean flash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +22,7 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
         tb = findViewById(R.id.toggleButton);
         cm = (CameraManager) getSystemService(CAMERA_SERVICE);
+        b =findViewById(R.id.button4);
         tb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -27,6 +32,14 @@ public class MainActivity3 extends AppCompatActivity {
                 else {
                     flashOff();
                 }
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity3.this, MainActivity.class);
+                startActivity(i);
+                finish();
             }
         });
     }
