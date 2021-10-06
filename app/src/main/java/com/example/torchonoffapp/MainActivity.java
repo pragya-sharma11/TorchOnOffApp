@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button b1, b2;
     CameraManager cm;
+    private  boolean flash =false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +30,23 @@ public class MainActivity extends AppCompatActivity {
                 flsahOff();
             }
         });
+    }
+    public void flashOn(){
+        try {
+            String id  = cm.getCameraIdList()[0];
+            cm.setTorchMode(id,true);
+            flash=true;
+        }catch (ClassCastException e){
+
+        }
+    }
+    public void flashOff(){
+        try {
+            String id  = cm.getCameraIdList()[0];
+            cm.setTorchMode(id,false);
+            flash=false;
+        }catch (ClassCastException e){
+
+        }
     }
 }
